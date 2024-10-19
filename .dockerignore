@@ -1,5 +1,5 @@
 node_modules
 .dockerignore
-Dockerfile
+dockerfile
 docker-compose.yml
 .git
