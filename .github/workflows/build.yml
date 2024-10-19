@@ -8,11 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # - name: Check out repository code
-      #   uses: actions/checkout@v1 #v2
+      - name: Check out repository code
+        uses: actions/checkout@v2 #v2
 
       - name: Set up Node.js 20
-        uses: actions/setup-node@v2 #v3
+        uses: actions/setup-node@v3 #v3
         with:
           node-version: '20'
 
@@ -31,10 +31,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1 # v3
+        uses: docker/setup-buildx-action@v3 # v3
 
       - name: Build the Docker image
-        uses: docker/build-push-action@v4 # v5
+        uses: docker/build-push-action@v5 # v5
         with:
           context: .
           file: ./Dockerfile
